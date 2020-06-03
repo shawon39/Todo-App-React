@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import UserLogin from "./components/UserLogin/UserLogin";
+import TodoComponent from "./components/TodoComponent/TodoComponent";
+import { TodoProvider } from "./components/TodoComponent/TodoContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	state = {
+		isLogged: false,
+	};
+
+	clickHandler = () => {
+		this.setState({
+			isLogged: !this.state.isLogged,
+		});
+	};
+
+	render() {
+		return (
+			<div className="App container">
+				<h1>React Todo App</h1>
+				<div className="row">
+					<div className="col-md-12">
+						<TodoProvider
+							value={{ ...this.state, clickHandler: this.clickHandler }}
+						>
+							<UserLogin />
+						</TodoProvider>
+					</div>
+
+					<div className="col-md-12">
+						<TodoComponent isLogged={this.state.isLogged} />
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;

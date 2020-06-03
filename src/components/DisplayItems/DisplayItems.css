@@ -1,0 +1,19 @@
+.list-group-item {
+  text-align: left;
+  font-family: 'PT Sans',serif;
+  color: #403b3b;
+}
+
+.Item {
+  float: right;
+}
+
+.far, .fas {
+  cursor: pointer;
+  color: #969696;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: #bfb5b5;
+}

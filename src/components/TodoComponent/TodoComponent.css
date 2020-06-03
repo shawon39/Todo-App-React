@@ -1,0 +1,21 @@
+.TodoApp {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.TodoList {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.NotLoggedIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: #403b3b;
+}
+
+.fa-ban{
+  color: brown;
+}
