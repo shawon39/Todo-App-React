@@ -9,7 +9,7 @@ class TodoComponent extends Component {
 		super(props);
 
 		this.state = {
-			Todos: ["Learning React", "Contest a 8 pm"],
+			Todos: ["Learning React", "Contest at 8 pm"],
 		};
 	}
 
